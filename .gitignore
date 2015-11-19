@@ -50,6 +50,7 @@ Obj/
 UnityGenerated/
 Library/
 Assets/AssetStoreTools*
+Assets\Standard Assets/
 
 # ===================================== #
 # Visual Studio / MonoDevelop generated #
