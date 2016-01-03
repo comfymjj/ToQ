@@ -7,7 +7,7 @@ public class Operand : Symbol {
 	bool beingDragged;
 
 	void Awake() {
-		base.Awake();
+		base.Awake(); //get the sprite renderer
 		padding = 0;
 	}
 

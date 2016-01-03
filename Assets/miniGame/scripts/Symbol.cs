@@ -17,7 +17,7 @@ public abstract class Symbol : MonoBehaviour {
     [HideInInspector]
     public Symbol next; //symbol after this one
 
-	public void Awake() { //need to call base.Start in subclasses
+	internal void Awake() { //need to call base.Awake in subclasses
 		sprite = GetComponent<SpriteRenderer>();
 	}
 

@@ -43,7 +43,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110268}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -.0599999987, y: -.200000003, z: -.100000001}
+  m_LocalPosition: {x: -0.06, y: -0.2, z: -0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 459470}
@@ -55,8 +55,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158924}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.85000002, y: .136999995, z: 0}
-  m_LocalScale: {x: .422394991, y: .418934286, z: 1}
+  m_LocalPosition: {x: -2.01, y: 0.137, z: 0}
+  m_LocalScale: {x: 0.422395, y: 0.4189343, z: 1}
   m_Children:
   - {fileID: 402710}
   m_Father: {fileID: 0}
@@ -79,8 +79,10 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
@@ -92,9 +94,10 @@ Rigidbody2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158924}
+  m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0.05
   m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -108,12 +111,13 @@ BoxCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158924}
   m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1.60000002, y: 2.70000005}
+  m_Size: {x: 1.7, y: 2.7}
 --- !u!102 &10242752
 TextMesh:
   serializedVersion: 3
@@ -122,8 +126,8 @@ TextMesh:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 110268}
   m_Text: 7a
-  m_OffsetZ: -.100000001
-  m_CharacterSize: .100000001
+  m_OffsetZ: -0.1
+  m_CharacterSize: 0.1
   m_LineSpacing: 1
   m_Anchor: 4
   m_Alignment: 1
@@ -146,6 +150,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ceeafe1e9f7770448792547950f50a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  padding: 0
+  prev: {fileID: 0}
+  next: {fileID: 0}
 --- !u!212 &21236412
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -164,14 +171,18 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_AutoUVMaxDistance: .5
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 3f8bc28d12bb5c94ea63cbfc3716b8bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

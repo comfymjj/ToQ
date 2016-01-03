@@ -14,26 +14,26 @@ public class Equation : MonoBehaviour {
 			Debug.Log(item);
 		}
 		head = children[0]; //will be head of a linked list of symbols
-		_eqWidth += head.width;
-		for (int i = 1; i < children.Length-1; i++) { //for all children except first & last
+		for (int i = 0; i < children.Length-1; i++) { //for all children except last
 			children[i].next = children[i+1]; //tie these two together
 			children[i+1].prev = children[i];
-			_eqWidth += children[i].width + children[i].padding*2; //used to center the equation on the screen
+			_eqWidth += children[i].width + children[i].padding*2; //_eqWidth is used later to center the equation on the screen
 			Debug.Log("width: " + children[i].width+", padding: "+ children[i].padding);
 		}
 		_eqWidth += children[children.Length-1].width;
+		Debug.Log("width: " + children[children.Length-1].width+", padding: "+ children[children.Length-1].padding);
 		this.align(); //properly space all the symbols in a row
 	}
 
 	void Update() {
-        Debug.DrawLine(head.transform.position, head.transform.position + Vector3.right*_eqWidth);
-    }
+        Debug.DrawLine(head.transform.position, head.transform.position + Vector3.right*_eqWidth, Color.red);
+		Debug.DrawLine(head.transform.position - Vector3.down, head.transform.position + Vector3.right*_screenWidth - Vector3.down, Color.blue);
+	}
 
 	public void align() {
-		head.x = (_screenWidth - _eqWidth)/2;
+		head.x = -_eqWidth/2f + head.width/2f;
 		for (Symbol symbol = head.next; symbol != null; symbol = symbol.next) { //for all symbols except head
-            Debug.Log("aligned");
-			symbol.align();
+			symbol.align(); //line up each symbol to the right of the previous one
 		}
 	}
 }
