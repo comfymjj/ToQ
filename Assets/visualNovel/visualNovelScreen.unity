@@ -144,6 +144,9 @@ MonoBehaviour:
   - speaker: 0
     sprite: {fileID: 21300006, guid: d119bab01415b2e4d815ba01237b450a, type: 3}
     text: Please don't go I've been here all day.
+  - speaker: 0
+    sprite: {fileID: 21300002, guid: 87015716bd2998a4ea65e4f672aa9d6e, type: 3}
+    text: 
   leftCharacter: {fileID: 418487664}
   rightCharacter: {fileID: 1735099634}
 --- !u!1 &418487663
