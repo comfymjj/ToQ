@@ -2,8 +2,8 @@
 using System.Collections;
 
 public class Sum : Operator {
-	void Awake () {
-		base.Awake();
+	void Awake() {
+		base.initialize();
 		padding = 0;
 	}
 }

@@ -2,26 +2,20 @@
 using System.Collections;
 
 public class Operand : Symbol {
-	float mouseX;
-	float mouseY;
 	bool beingDragged;
-
+	
 	void Awake() {
-		base.Awake(); //get the sprite renderer
-		padding = 0;
+		base.initialize(); //this calls initialization stuff inside the Symbol class
 	}
 
-	// Update is called once per frame
-	void Update(){
-		mouseX = Input.mousePosition.x;
-		mouseY = Input.mousePosition.y;
-	}
 	void OnMouseDrag() {
 		beingDragged = true;
-		transform.position = new Vector3(Camera.main.ScreenToWorldPoint(new Vector3(mouseX,mouseY,9f)).x, transform.position.y);
+		group.onDragOperand();
 	}
 	void OnMouseUp() {
 		if (beingDragged) {
+			group.equation.align(); //causes everything to snap into place
+			//TODO: modify align() to include smooth movement and to avoid setting the x position of the object being dragged
 			//transform.position = new Vector3(transform.position.x, transform.position.y, 0);
 		}
 		beingDragged = false;
