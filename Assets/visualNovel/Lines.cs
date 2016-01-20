@@ -38,7 +38,7 @@ public class Lines : MonoBehaviour {
 		nextLine();
 
 		//start with black screen
-		Camera.main.cullingMask = 0;
+
 	}
 
 	//runs 60 times a second
@@ -81,7 +81,8 @@ public class Lines : MonoBehaviour {
 		}
 
 		if (lineIndex == 1) {
-			Camera.main.cullingMask = 1;
+			//fade in to scene
+			
 		}
 
 	}
