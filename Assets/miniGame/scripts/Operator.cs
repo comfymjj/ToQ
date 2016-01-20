@@ -7,11 +7,15 @@ public class Operator : Symbol {
 			if (isActiveAndEnabled) { //true if operator isn't hidden on screen
 				return sprite.bounds.min.x;
 			} else { //the above statement returns null if hidden
-				Debug.Log("op.x: " + transform.position.x);
 				return transform.position.x; //so instead we'll just return the regular transform position
 			}
 		}
-		set { transform.position = new Vector3(value + sprite.bounds.extents.x, transform.position.y, transform.position.z); }
+		set {
+			float offset = 0; //default value if sprite is inactive
+			if (isActiveAndEnabled) { //if sprite is active
+				offset = sprite.bounds.extents.x; //get half sprite width
+			}
+			transform.position = new Vector3(value + offset, transform.position.y, transform.position.z); }
 	}
 
 	public override float width { //width of sprite
@@ -34,5 +38,9 @@ public class Operator : Symbol {
 			}
 		}
 		set { _padding = value; }
+	}
+
+	void Awake() {
+		base.initialize(); //this calls initialization stuff inside the Symbol class
 	}
 }
