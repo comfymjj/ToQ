@@ -36,6 +36,9 @@ public class Lines : MonoBehaviour {
 		//display the first line
 		lineIndex = -1;
 		nextLine();
+
+		//start with black screen
+		Camera.main.cullingMask = 0;
 	}
 
 	//runs 60 times a second
@@ -76,6 +79,11 @@ public class Lines : MonoBehaviour {
 				leftCharacter.color = new Color(.75f, .75f, .75f);
 			}
 		}
+
+		if (lineIndex == 1) {
+			Camera.main.cullingMask = 1;
+		}
+
 	}
 
 }
