@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 
 public class Equation : MonoBehaviour {
+	//return a list of all children
 	public IEnumerable<Group> getChildren() {
-		for (Group group = head; group != null; group = group.next) { //yeild all groups in this equation
+		for (Group group = head; group != null; group = group.next) {
 			yield return group;
 		}
 	}
@@ -18,11 +19,12 @@ public class Equation : MonoBehaviour {
 		head = children[0]; 
 		for (int i = 0; i < children.Length-1; i++) { //for all children except last
 			children[i].equation = this; //tell the symbol which equation it belongs to
-			children[i].setRight(children[i+1]); //tie children[i] and children[i+1] together
+			children[i].setNext(children[i+1]); //tie children[i] and children[i+1] together
 			_eqWidth += children[i].width; //_eqWidth is used later to center the equation on the screen
 		}
-		_eqWidth += children[children.Length-1].width; //add last symbol since it was excluded from the above loop
-		this.align(); //properly space all the symbols in a row
+		children[children.Length-1].equation = this; //add last symbol since it was excluded from the above loop
+		_eqWidth += children[children.Length-1].width;
+		this.align(null); //properly space all the symbols in a row
 	}
 
 	void Update() {
@@ -30,10 +32,18 @@ public class Equation : MonoBehaviour {
 		Debug.DrawLine(head.transform.position - Vector3.down, head.transform.position + Vector3.right*_screenWidth - Vector3.down, Color.blue);
 	}
 
-	public void align() {
+	//ignore is given space in the alignment but it's x position is not set
+	public void align(Group ignore) {
+		string childs = "";
+		foreach (Group child in getChildren()) {
+			childs += child.ToString() + ", ";
+		}
+		Debug.Log(childs);
 		head.x = -_eqWidth/2f; //position head so that rest of equation is centered on screen
 		for (Group group = head.next; group != null; group = group.next) { //for all symbols except head
-			group.align(); //line up each symbol to the right of the previous one
+			if (group != ignore) {
+				group.align(); //line up each symbol to the right of the previous one
+			}
 		}
 	}
 }
