@@ -25,6 +25,7 @@ public class Lines : MonoBehaviour {
 	private RectTransform textBox; //position of our textBox
 	private RectTransform nameBox; //position of the box in the textbox that displays names
 	private Text speakerName; //text showing name of current speaker
+	private RawImage black; //used for fading in/out of black
 
 	void Start () {
 		//get game objects from the hierarchy
@@ -32,13 +33,14 @@ public class Lines : MonoBehaviour {
 		text = GameObject.Find("canvas/textBox/textHolder/text").GetComponent<Text>();
 		nameBox = GameObject.Find("canvas/textBox/nameBox").GetComponent<RectTransform>();
 		speakerName = GameObject.Find("canvas/textBox/nameBox/name").GetComponent<Text>();
+		black = GameObject.Find("canvas/black").GetComponent<RawImage>();
 
 		//display the first line
 		lineIndex = -1;
 		nextLine();
 
 		//start with black screen
-
+		black.color = new Vector4(0, 0, 0, 1); //black
 	}
 
 	//runs 60 times a second
@@ -47,8 +49,10 @@ public class Lines : MonoBehaviour {
         if (Input.GetMouseButtonDown(0) || Input.anyKeyDown) {
 			nextLine();
         }
-        //print more words, unless all words are onscreen
-        if (wordIndex < words.Length) {
+		Debug.Log(black.color.a);
+        if (black.color.a < 1 && black.color.a > 0) { //if black is visible
+			black.color = new Vector4(0, 0, 0, black.color.a - Time.deltaTime); //fade in over 1 second
+		} else if (wordIndex < words.Length) { //print more words, unless all words are onscreen
 			text.text += words[wordIndex]+" ";
 			wordIndex++;
 		}
@@ -81,8 +85,8 @@ public class Lines : MonoBehaviour {
 		}
 
 		if (lineIndex == 1) {
-			//fade in to scene
-			
+			//begin fade
+			black.color = new Vector4(0, 0, 0, 0.9999f); //fade out a teensy tiny bit
 		}
 
 	}
