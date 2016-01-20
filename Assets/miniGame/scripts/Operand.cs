@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using System;
 
 public class Operand : Symbol { //every operand contains an operator
@@ -12,6 +13,10 @@ public class Operand : Symbol { //every operand contains an operator
 	public LinkedListNode<Operand> node; //the node to which this belongs
 	[HideInInspector]
 	public Operator operation; //the operator contained by this group
+	[HideInInspector]
+	public int coefficient;
+	[HideInInspector]
+	public string variable;
 
 	//GETTERS AND SETTERS
 	public float sortX { //left edge of operator
@@ -27,6 +32,10 @@ public class Operand : Symbol { //every operand contains an operator
 	//FUNCTIONS
 	void Awake() { //called before first frame of game loop
 		base.initialize(); //this calls initialization stuff inside the Symbol class
+		string value = transform.GetChild(0).GetComponent<TextMesh>().text; //text value, e.g. 7a
+		Match result = new Regex(@"(\d+)([a-zA-Z]+)").Match(value); //matches a digit followed by a string
+		coefficient = Int32.Parse(result.Groups[1].Value); //int part
+		variable = result.Groups[2].Value; //letter part
 		operation = transform.GetChild(1).GetComponent<Operator>(); //get operator
 	}
 
@@ -77,15 +86,24 @@ public class Operand : Symbol { //every operand contains an operator
 			}
 		}
 	}
-
-	//COPIED FROM OPERAND
-
 	void OnMouseUp() {
 		if (beingDragged) {
 			beingDragged = false;
 			equation.align(); //causes everything to snap into place
-			//TODO: modify align() to include smooth movement and to avoid setting the x position of the object being dragged
 		}
+	}
+
+	public void addToPrevious() {
+		if (!node.Previous.Value.variable.Equals(this.variable)) { //if they are different nomials
+			Debug.Log("Incompatible Nomials!"); //throw an error
+		}
+		int prevCoefficient = node.Previous.Value.coefficient;
+		node.List.Remove(node.Previous); //remove from the list
+		Destroy(node.Previous.Value.gameObject); //destroy
+		coefficient = prevCoefficient + this.coefficient; //add this.value and prevValue
+		TextMesh textMesh = transform.GetChild(0).GetComponent<TextMesh>(); //get our text mesh
+		textMesh.text = coefficient.ToString() + variable; //update value onscreen
+		equation.align(); //realign equation to account for gap
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

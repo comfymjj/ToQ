@@ -1,7 +1,11 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class Operator : Symbol {
+	//VARIABLES
+	private Operand operand;
+
+	//GETTERS AND SETTERS
 	public override float x { //x position of left edge of sprite
 		get {
 			if (isActiveAndEnabled) { //true if operator isn't hidden on screen
@@ -17,7 +21,6 @@ public class Operator : Symbol {
 			}
 			transform.position = new Vector3(value + offset, transform.position.y, transform.position.z); }
 	}
-
 	public override float width { //width of sprite
 		get {
 			if (isActiveAndEnabled) {
@@ -27,7 +30,6 @@ public class Operator : Symbol {
 			}
 		}
 	}
-
 	private float _padding; //operators have padding on either side
 	public float padding {
 		get {
@@ -40,7 +42,16 @@ public class Operator : Symbol {
 		set { _padding = value; }
 	}
 
+	//FUNCTIONS
 	void Awake() {
 		base.initialize(); //this calls initialization stuff inside the Symbol class
+		operand = transform.parent.GetComponent<Operand>(); //refernce to parent Operand
+		Debug.Log("Operand: " + operand);
+		_padding = 0;
+	}
+
+	void OnMouseDown() {
+		Debug.Log("mousedown");
+		operand.addToPrevious();
 	}
 }
