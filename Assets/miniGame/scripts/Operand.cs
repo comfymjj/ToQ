@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using System;
@@ -55,7 +56,15 @@ public class Operand : Symbol { //every operand contains an operator
 		this.x = Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, 0)).x - (this.midPoint - this.x); //center this object at the mouse's x coordinate
 		Debug.Log("head.midpoint: " + list.First.Value.midPoint + ", this.midpoint: " + this.midPoint + ", next.midPoint: " + list.First.Next.Value.midPoint);
 		if (this.node == list.First) { //if this object is the head
-			if (this.midPoint > node.Next.Value.midPoint) { //and it is to the right of the next operand
+			if (node.Next == null) { //if this is the only node in the list
+
+
+
+				
+
+
+
+			} else if (this.midPoint > node.Next.Value.midPoint) { //and it is to the right of the next operand
 				Debug.Log("remove head");
 				this.operation.gameObject.SetActive(true); //show its operator
 				node.Next.Value.operation.gameObject.SetActive(false); //hide the new head's value
@@ -97,13 +106,31 @@ public class Operand : Symbol { //every operand contains an operator
 		if (!node.Previous.Value.variable.Equals(this.variable)) { //if they are different nomials
 			Debug.Log("Incompatible Nomials!"); //throw an error
 		}
-		int prevCoefficient = node.Previous.Value.coefficient;
-		node.List.Remove(node.Previous); //remove from the list
-		Destroy(node.Previous.Value.gameObject); //destroy
+		int prevCoefficient = node.Previous.Value.coefficient; //get coefficient of operand to right
 		coefficient = prevCoefficient + this.coefficient; //add this.value and prevValue
 		TextMesh textMesh = transform.GetChild(0).GetComponent<TextMesh>(); //get our text mesh
 		textMesh.text = coefficient.ToString() + variable; //update value onscreen
-		equation.align(); //realign equation to account for gap
+		equation.deleteNode(node.Previous); //delete right node
+	}
+
+	private IEnumerator shake() {
+		float magnitude = 1;
+		float duration = 1f; //1 second
+		float elapsed = 0.0f;
+		Vector3 originalPos = transform.position;
+		while (elapsed < duration) {
+			elapsed += Time.deltaTime;
+			float percentComplete = elapsed / duration;
+			float damper = 1.0f - Mathf.Clamp(4f*percentComplete - 3.0f, 0.0f, 1.0f);
+			// map value to [-1, 1]
+			float x = UnityEngine.Random.value*2f - 1f;
+			float y = UnityEngine.Random.value*2f - 1f;
+			x *= magnitude*damper;
+			y *= magnitude*damper;
+			Camera.main.transform.position = new Vector3(x, y, originalPos.z);
+			yield return null;
+		}
+		transform.position = originalPos;
 	}
 
 	void OnTriggerEnter2D(Collider2D other) {

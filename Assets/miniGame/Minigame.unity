@@ -255,7 +255,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &739510339
 Transform:
   m_ObjectHideFlags: 0
@@ -501,7 +501,8 @@ MonoBehaviour:
   beingDragged: 0
   equation: {fileID: 0}
   operation: {fileID: 0}
-  value: 
+  coefficient: 0
+  variable: 
 --- !u!212 &860760453
 SpriteRenderer:
   m_ObjectHideFlags: 0
