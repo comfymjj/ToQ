@@ -1,0 +1,252 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &129518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 466688}
+  - 114: {fileID: 11431728}
+  m_Layer: 0
+  m_Name: List of Lines
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &466688
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11431728
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af0edd0dfac92994f8601cea8f280070, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 4900000, guid: eccc66d8e2a6aa440b81f83353163e65, type: 3}
+  lines:
+  - speaker: 0
+    sprite: {fileID: 21300000, guid: f0a4df2bfd9a14c1c94d2ea3856d7cbb, type: 3}
+    name: Mom
+    dialogue: "You\u2019re late you know...But here, I made you your smoothie\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Mom
+    dialogue: "Oh honey, did you end up finishing that math\u2026*slam*, sigh, and
+      she\u2019s gone. \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: You
+    dialogue: "Wahhhhh\u2026. *falls through magical portal*\r\n\r\nBlack screen,
+      \u201CMeanwhile\u2026 \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Goblin 1
+    dialogue: "Well, well, if it isn\u2019t a lost little prince. You\u2019ll fetch
+      a pretty sum. Where are your guards, hmm? You think someone\u2019s just going
+      to fall out of the \r\nsky and save you now?\r\n\r\n*thunk, you fall from the
+      sky and land on goblin*\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: You
+    dialogue: "uhh, what happened..? *notices guys in funny outfit and hideous monsters
+      staring at her* WHAT THE...!!!\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Prince Xander
+    dialogue: "*reaches out hand* Excuse me, miss. Are you alright?\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Goblin3
+    dialogue: "Look at what you did to our boss! \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: You
+    dialogue: "My what???\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "Th-that was amazing! Your aura, such power. You really could be the
+      key to saving us all. \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "Please, come with me, back to my castle. It is not safe out here. I
+      will explain everything to you once we get back.\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "So you would rather stay out here, waiting for the goblins\u2019 reinforcements.
+      \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "Welcome to my home, Degreeian Castle. Please, make yourself at home.
+      I do apologize for the mess, it has been a while since we\u2019ve had guests.
+      *cut to image of pristine castle interior* \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "But come, let\u2019s go to the study and make ourselves comfortable,
+      while Albert makes us some tea.\r\n*sitting on plush chairs, mugs of tea in
+      hand, Prince begins to tell his tale*\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "My name is ___ and I am from New Town. I am just a normal 15 year old
+      girl I guess. I have a mom, go to school, hang out with friends. I was on my
+      way to school this morning and I was texting my best friend. I guess I wasn\u2019t
+      paying attention to where I was going cause I tripped on something and the next
+      thing I know, I end up here. \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "Wait, you keep saying power, heroes, what exactly is going on?!\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "Right, ok, I guess that makes sense. And what exactly happened with
+      those creature things back there?\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "\u2026.O_o\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "Wait, you, you really think this will get me back home? \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "Ok, then since I have no other options, I guess I can help you. Who
+      knows, maybe I will even learn something along the way?\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "*yawns* Wow, I guess I didn\u2019t realize how tired I was. \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "*half asleep* Night, your Highness\r\n\r\n*Leaves*\r\n\r\n*Changes
+      to next morning, in the guest bedroom of the castle*\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Maid
+    dialogue: "Miss__, you have awaken. His Highness invites you for breakfast. Your
+      clothes are here. Would you like me to assist you? \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "Ah, good morning. I hope your rest was well. We shall start our journey
+      after the meal.\r\n*Scene changes to after breakfast, on horses, with bags packed,
+      on the road*\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "*sigh* Ready as I\u2019ll ever be. \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: The Fractal Forest
+    dialogue: "\r\n\r\n*riding through Forest*\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "Oh, we want to attract as little attention as we can, so we are under
+      the guise of a travelling merchant and his pretty young wife. Call me Xavier.
+      \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "Fun? I suppose, any spare time we have, we would be honing our powers,
+      protecting the people. Is that what you mean?\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "Ahh! \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "Yeah, nothing seems to be broken, but what just happened?\r\n\r\n*Goblins
+      step out from bushes*\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "Leave us alone. Your friends got what they deserved.\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "Are you alright? You were hit pretty badly.\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "So where do we go now?\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "I managed to pursued the innkeeper to sell us 2 of his horses. Unfortunately,
+      we do not have much in terms of food and weapons, but we will be ok. \r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "What was that!\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Monster
+    dialogue: "Yes, more servants, the master will be pleased.\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "STOP! Leave those creatures alone Monster!\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "You made it my business when you attacked these innocent creatures.
+      \r\n\r\n*battle starts, ends*\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "Ah you see, this is Miss , and we are\u2026\r\n\r\n*explains their
+      mission*\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: Y
+    dialogue: "Hey, is everything ok?\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "What?!\r\n\r"
+  - speaker: 0
+    sprite: {fileID: 0}
+    name: P
+    dialogue: "*sigh* You seem very adamant about this. What do you think ___\r\n\r"
+  leftCharacter: {fileID: 0}
+  rightCharacter: {fileID: 0}
+  fadeIn: {r: 0, g: 0, b: 0, a: 1}
+  fadeOut: {r: 0, g: 0, b: 0, a: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 129518}
+  m_IsPrefabParent: 1
