@@ -122,7 +122,7 @@ TextMesh:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 409779476}
-  m_Text: 7a
+  m_Text: 1a
   m_OffsetZ: -0.1
   m_CharacterSize: 0.1
   m_LineSpacing: 1
@@ -635,6 +635,10 @@ Prefab:
       propertyPath: m_Name
       value: goblin (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 10271380, guid: 0f94ec8e36568dd45bf967f262b52585, type: 2}
+      propertyPath: m_Text
+      value: 9a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f94ec8e36568dd45bf967f262b52585, type: 2}
   m_IsPrefabParent: 0
@@ -728,6 +732,10 @@ Prefab:
       propertyPath: m_Name
       value: goblin (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 10271380, guid: 0f94ec8e36568dd45bf967f262b52585, type: 2}
+      propertyPath: m_Text
+      value: 4a
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f94ec8e36568dd45bf967f262b52585, type: 2}
   m_IsPrefabParent: 0
@@ -777,6 +785,10 @@ Prefab:
     - target: {fileID: 143344, guid: 0f94ec8e36568dd45bf967f262b52585, type: 2}
       propertyPath: m_Name
       value: goblin (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 10271380, guid: 0f94ec8e36568dd45bf967f262b52585, type: 2}
+      propertyPath: m_Text
+      value: 2a
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0f94ec8e36568dd45bf967f262b52585, type: 2}

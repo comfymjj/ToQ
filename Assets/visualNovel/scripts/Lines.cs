@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using System.Text.RegularExpressions;
 
 //helper classes
@@ -16,6 +17,7 @@ public struct Line {
 //main class
 public class Lines : MonoBehaviour {
 	public TextAsset txt; //a file, e.g. dialogue.txt
+	[SerializeField]
 	public Line[] lines; //array of all lines shown one-by-one in textbox
 	public SpriteRenderer leftCharacter;
 	public SpriteRenderer rightCharacter;
@@ -85,7 +87,8 @@ public class Lines : MonoBehaviour {
 				fader.color = fadeIn;
 				if (fadeOut.a >= 1) {
 					fading = Fade.None;
-					//TODO: go to next scene!
+					//go to next level
+					SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 				}
 				break;
 		}

@@ -51,7 +51,6 @@ public class Operator : Symbol {
 	}
 
 	void OnMouseDown() {
-		Debug.Log("mousedown");
 		operand.addToPrevious();
 	}
 }

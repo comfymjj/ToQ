@@ -71,8 +71,6 @@ public class LinesEditor : Editor {
 
 		SerializedProperty lines = serializedObject.FindProperty("lines");
 
-		Debug.Log(lines.arraySize);
-
 		ArrayGUI(lines);
 
 		SerializedProperty fadeOut = serializedObject.FindProperty("fadeOut");

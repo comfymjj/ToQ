@@ -30,6 +30,8 @@ public class Operand : Symbol { //every operand contains an operator
 		}
 	}
 
+	private int stack; //how many goblins are stacked behind this one
+
 	//FUNCTIONS
 	void Awake() { //called before first frame of game loop
 		base.initialize(); //this calls initialization stuff inside the Symbol class
@@ -38,6 +40,7 @@ public class Operand : Symbol { //every operand contains an operator
 		coefficient = Int32.Parse(result.Groups[1].Value); //int part
 		variable = result.Groups[2].Value; //letter part
 		operation = transform.GetChild(1).GetComponent<Operator>(); //get operator
+		stack = 0;
 	}
 
 	public void align(float newX) { //position this group to the right of prev
@@ -110,6 +113,11 @@ public class Operand : Symbol { //every operand contains an operator
 		coefficient = prevCoefficient + this.coefficient; //add this.value and prevValue
 		TextMesh textMesh = transform.GetChild(0).GetComponent<TextMesh>(); //get our text mesh
 		textMesh.text = coefficient.ToString() + variable; //update value onscreen
+		Operand prev = node.Previous.Value;
+		prev.transform.SetParent(this.transform); //parent prev to this
+		//currently breakes an operand with multiple stacks is stcked on this one
+		stack++;
+		prev.transform.localPosition = new Vector3(0.1f, 0.1f, 0.1f) * stack; //offset it slightly
 		equation.deleteNode(node.Previous); //delete right node
 	}
 
